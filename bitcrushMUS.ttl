@@ -1,0 +1,52 @@
+@prefix lv2: <http://lv2plug.in/ns/lv2core#>.
+@prefix doap: <http://usefulinc.com/ns/doap#>.
+
+<http://musens.pluggar/lv2/lv2pftci/bitcrushMUS>
+  a lv2:Plugin;
+  lv2:binary <bitcrushMUS.so>;
+  doap:name "bitcrushMUS MUS";
+  doap:license <http://usefulinc.com/doap/licenses/gpl>;
+
+  lv2:port[
+    a lv2:AudioPort, lv2:InputPort;
+    lv2:index 0;
+    lv2:symbol "in";
+    lv2:name "Input";
+  ],
+
+  [
+    a lv2:AudioPort, lv2:OutputPort;
+    lv2:index 1;
+    lv2:symbol "out";
+    lv2:name "Output";
+  ],
+
+  [
+    a lv2:ControlPort, lv2:InputPort;
+    lv2:index 2;
+    lv2:symbol "bits";
+    lv2:name "Bits";
+    lv2:minimum 1;
+    lv2:maximum 24;
+    lv2:default 24;
+  ],
+
+  [
+    a lv2:ControlPort, lv2:InputPort;
+    lv2:index 3;
+    lv2:symbol "mix";
+    lv2:name "Mix";
+    lv2:minimum 0;
+    lv2:maximum 1;
+    lv2:default 1;
+  ],
+
+  [
+    a lv2:ControlPort, lv2:InputPort;
+    lv2:index 4;
+    lv2:symbol "amp";
+    lv2:name "Amp";
+    lv2:minimum 0;
+    lv2:maximum 1;
+    lv2:default 1;
+  ].
